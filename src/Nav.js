@@ -1,15 +1,14 @@
-import react from "react";
+import { Link } from "react-router-dom";
 
-function Nav() {
-
-
-
+function Nav({ dogs }) {
   return (
-    <div>
-      <h1>Dogs</h1>
-    </div>
+    <nav className="Nav">
+      <Link to="/">Home</Link>
+      {dogs.map((dog) => {
+        return <Link to={`/dogs/${dog}`}> {dog} </Link>;
+      })}
+    </nav>
   );
 }
 
-
-export default Nav
+export default Nav;
